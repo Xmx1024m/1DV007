@@ -58,7 +58,6 @@ public class Stenaline implements Ferry {
 
 	@Override
 	public Iterator iterator() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

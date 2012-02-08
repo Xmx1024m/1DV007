@@ -12,10 +12,8 @@ public class NewsMain {
 		// Demonstrerar NewsPaper och NewsAgency
 
 		NewsPaper dn = new NewsPaper("Dagens Nyheter");
-		NewsPaper ab = new NewsPaper("Aftonbladet");
 
 		dn.addNews("Detta är en sträng");
-		ab.addNews("Detta är en nyhet på aftonbladet");
 		System.out.println(dn.printNews());
 		
 	}

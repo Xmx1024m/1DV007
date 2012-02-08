@@ -25,7 +25,7 @@ public class NewsPaper {
 		
 	}
 	
-	// LÂter anv√§ndaren v‰lja vilken nyhet som ska skrivas ut
+	// LÂter anv‰ndaren v‰lja vilken nyhet som ska skrivas ut
 	public String printNews() {
 		
 		System.out.print("Just nu finns det " + news.size() + "st nyheter, vilken vill du skriva ut?: ");
