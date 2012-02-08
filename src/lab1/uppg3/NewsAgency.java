@@ -4,6 +4,32 @@
  */
 package lab1.uppg3;
 
-public interface NewsAgency {
+import java.util.ArrayList;
+
+public class NewsAgency {
+	private String name = ""; // Namnet på nyhetsbyrån
+	private ArrayList<String> news = new ArrayList<>(); // Nyheter hos nyhetsbyrån
+	private ArrayList<NewsPaper> papers = new ArrayList<>(); // Registrerade tidningar
 	
+	public NewsAgency(String n) { // Namn på nyhetsbyrån
+		name = n;
+	}
+	
+	public void regNewsPaper(NewsPaper n) { // Registrera en tidning
+		papers.add(n);
+		n.reggedAt(this);
+	}
+	
+	public void addNews(String s) {
+		news.add(s);
+	}
+	
+	private void shareNews() { // Dela nyheter med registrerade tidningar
+		for (int i=0; i<papers.size(); i++) {
+			for (int j=0; j<news.size(); j++) {
+				papers.get(i).addNews(news.get(j));
+			}
+		}
+		// TODO
+	}
 }

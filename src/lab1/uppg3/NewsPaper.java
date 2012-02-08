@@ -9,20 +9,28 @@ import java.util.Scanner;
 
 public class NewsPaper {
 	
-	private String name = "";				// namnet på nyhetstidningen
+	private String name = ""; // namnet på nyhetstidningen
 	private ArrayList<String> news = new ArrayList<>();
 	private Scanner scan = new Scanner(System.in);
+	private NewsAgency rAt;
 
 	// Simpel konstruktor som instansierar ett nytt NewsPaper objekt och ger det ett namn
 	public NewsPaper (String n) {
 		name = n;
 	}
 	
-	// Lägger till nyheter i vår ArrayList "news"
-	public void addNews(String s) { news.add(s); }
+	public void reggedAt(NewsAgency n) { // Nyhetsbyrå som tidningen är registrerad på
+		rAt = n;
+	}
 	
-	private void shareNews() {
-		
+	// Lägger till nyheter i vår ArrayList "news"
+	public void addNews(String s) {
+		news.add(s);
+		shareNews();
+	}
+	
+	private void shareNews() { // Dela nyheter hos nyhetsbyrå
+		rAt.addNews(news.get(news.size()-1));
 	}
 	
 	// Låter användaren välja vilken nyhet som ska skrivas ut
