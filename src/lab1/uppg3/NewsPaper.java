@@ -1,7 +1,5 @@
-// KUK
-
 /*
- * F�rfattare: Simon Metsi & Mathias Andreasen
+ * Författare: Simon Metsi & Mathias Andreasen
  * NewsPaper.java
  */
 package lab1.uppg3;
@@ -11,7 +9,7 @@ import java.util.Scanner;
 
 public class NewsPaper {
 	
-	private String name = "";				// namnet p� nyhetstidningen
+	private String name = "";				// namnet på nyhetstidningen
 	private ArrayList<String> news = new ArrayList<>();
 	private Scanner scan = new Scanner(System.in);
 
@@ -20,14 +18,14 @@ public class NewsPaper {
 		name = n;
 	}
 	
-	// L�gger till nyheter i v�r ArrayList "news"
+	// Lägger till nyheter i vår ArrayList "news"
 	public void addNews(String s) { news.add(s); }
 	
 	private void shareNews() {
 		
 	}
 	
-	// L�ter användaren v�lja vilken nyhet som ska skrivas ut
+	// Låter användaren välja vilken nyhet som ska skrivas ut
 	public String printNews() {
 		
 		System.out.print("Just nu finns det " + news.size() + "st nyheter, vilken vill du skriva ut?: ");
