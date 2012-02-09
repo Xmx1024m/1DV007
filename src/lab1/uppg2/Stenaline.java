@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 public class Stenaline implements Ferry {
 
-	// Arraylist som sparar alla våra objekt från Vehicle
+	// Arraylist som sparar alla vï¿½ra objekt frï¿½n Vehicle
 	ArrayList<Vehicle> pVehicle = new ArrayList<>();
 	
 	ArrayList<Passenger> pPass = new ArrayList<>();
@@ -14,12 +14,12 @@ public class Stenaline implements Ferry {
 	public int countPassengers() {
 		int pSum = 0; // summan av passangerare
 		
-		// Loopar igenom alla passengers och lägger till dem i pSum
+		// Loopar igenom alla passengers och lï¿½gger till dem i pSum
 		for (int i = 0; i < pPass.size(); i++) {
 			pSum += pPass.get(i).getPass();
 		}
 		
-		// Loopar igenom alla bilar och lägger till deras passengers i pSum
+		// Loopar igenom alla bilar och lï¿½gger till deras passengers i pSum
 		for (int i = 0; i < pVehicle.size(); i++) {
 			pSum += pVehicle.get(i).getPass();
 		}
@@ -29,10 +29,10 @@ public class Stenaline implements Ferry {
 
 	@Override
 	public int countVehicleSpace() {
-		// Returnerar summan av hur mycket yta alla fordon tar upp i färjan
+		// Returnerar summan av hur mycket yta alla fordon tar upp i fï¿½rjan
 		int sizeSum = 0;
 		
-		// Loopar igenom alla fordon och lägger till deras storlek i sizeSum
+		// Loopar igenom alla fordon och lï¿½gger till deras storlek i sizeSum
 		for (int i = 0; i < pVehicle.size(); i++) {
 			sizeSum += pVehicle.get(i).getSize();
 		}
@@ -44,7 +44,7 @@ public class Stenaline implements Ferry {
 	public int countMoney() {
 		int sum = 0; // total sum
 		
-		// Loopar igenom alla fordon vi har och lägger till priset får varje i sum
+		// Loopar igenom alla fordon vi har och lï¿½gger till priset fï¿½r varje i sum
 		for (int i = 0; i < pVehicle.size(); i++) {
 			sum += pVehicle.get(i).getPrize();
 		}
@@ -58,37 +58,36 @@ public class Stenaline implements Ferry {
 
 	@Override
 	public Iterator iterator() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void embark(Vehicle v) {
-		// Lägger till vårt fordon på färjan
+		// Lï¿½gger till vï¿½rt fordon pï¿½ fï¿½rjan
 		
 		if (hasRoomforPassenger() && hasSpaceFor(v)) {
 			pVehicle.add(v);
 			countMoney();
 		}
 		else
-			System.err.println("Vi har inte plats för mer fordon på färjan");
+			System.err.println("Vi har inte plats fï¿½r mer fordon pï¿½ fï¿½rjan");
 		
 	}
 
 	@Override
 	public void embark(Passenger p) {
-		// Lägger till vår pass. på färjan
+		// Lï¿½gger till vï¿½r pass. pï¿½ fï¿½rjan
 		if (hasRoomforPassenger()) {
 			pPass.add(p);
 			countMoney();
 		}
 		else
-			System.err.println("Vi har inte plats för mer passagerare");		
+			System.err.println("Vi har inte plats fï¿½r mer passagerare");		
 	}
 
 	@Override
 	public void disembark() {
-		// Tömmer pVehicle / Passengers på fordon, sparar pengarna
+		// Tï¿½mmer pVehicle / Passengers pï¿½ fordon, sparar pengarna
 		pPass.clear();
 		pVehicle.clear();
 		
@@ -96,7 +95,7 @@ public class Stenaline implements Ferry {
 
 	@Override
 	public boolean hasSpaceFor(Vehicle v) {
-		// Tittar om fordonets storlek + nuvarande storleken är mindre än 40
+		// Tittar om fordonets storlek + nuvarande storleken ï¿½r mindre ï¿½n 40
 		
 		if (v.getSize() + countVehicleSpace() <= 40)
 			return true;
@@ -107,7 +106,7 @@ public class Stenaline implements Ferry {
 
 	@Override
 	public boolean hasRoomforPassenger() {
-		// Tittar om vi har rum för alla passagerare
+		// Tittar om vi har rum fï¿½r alla passagerare
 		
 		if (this.countPassengers() + countPassengers() <= 200)
 			return true;
