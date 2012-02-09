@@ -30,6 +30,5 @@ public class NewsAgency {
 				papers.get(i).addNews(news.get(j));
 			}
 		}
-		// TODO
 	}
 }
