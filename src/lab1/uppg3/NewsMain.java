@@ -15,11 +15,12 @@ public class NewsMain {
 		NewsPaper dn = new NewsPaper("Dagens Nyheter");
 		NewsPaper ab = new NewsPaper("Aftonbladet");
 		
-		dn.addNews("Test 1");
-		dn.addNews("Test 2");
+		dn.addNews("DN 1");
+		dn.addNews("DN 2");
 		
-		ab.addNews("Test 3");
-		ab.addNews("Test 4");
+		ab.addNews("AB 3");
+		ab.addNews("AB 4");
+		ab.addNews("AB 5");
 		
 		tt.addNewspaper(dn);
 		tt.addNewspaper(ab);
@@ -28,7 +29,7 @@ public class NewsMain {
 		
 		System.out.print(tt.listNewsPapers());
 		
-		
+		System.out.println(ab.printNews());
 		
 		
 	}

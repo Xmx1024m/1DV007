@@ -34,14 +34,18 @@ public class NewsAgency {
 		
 		ArrayList<String> sNews = new ArrayList<String>();
 		
-		for (int i = 0; i < newsArchive.size(); i++) {
+		for (int i = 0; i < (newsArchive.size()); i++) {
 			sNews.addAll(newsArchive.get(i).getNews());
 		}
 		
-		for (int k = 0; k < sNews.size(); k++) {
-			
-			if (newsArchive.get(k).getSpecificNews(k) != sNews.get(k))
-				newsArchive.get(k).addNews(sNews.get(k));
+		// Sparar varje nyhet i en sträng och tittar om den strängen inte finns i en viss tidning, och lägger till den 
+		for (int j = 0; j < newsArchive.size(); j++) {
+			for (int k = 0; k < sNews.size(); k++) {
+				String str = sNews.get(k);
+				
+				if (!newsArchive.get(j).getNews().contains(str))
+					newsArchive.get(j).addNews(str);
+			}
 		}
 	}
 }

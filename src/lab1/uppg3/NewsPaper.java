@@ -22,13 +22,6 @@ public class NewsPaper {
 	// Returnerar namnet på nyhetstidningen
 	public String getName () { return name; }
 	
-	// Specifik nyhet
-	public String getSpecificNews (int n) {
-		
-		String str = news.get(n).toString();
-		return str;
-	}
-	
 	// Returnerar alla nyhter en tidning har
 	public ArrayList getNews () {
 		
