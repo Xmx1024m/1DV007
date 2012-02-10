@@ -17,7 +17,6 @@ public class NewsAgency {
 	
 	public void regNewsPaper(NewsPaper n) { // Registrera en tidning
 		papers.add(n);
-		n.reggedAt(this);
 	}
 	
 	public void addNews(String s) {
