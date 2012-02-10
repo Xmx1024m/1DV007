@@ -12,14 +12,10 @@ public class NewsAgency {
 	private ArrayList<NewsPaper> newsArchive = new ArrayList<NewsPaper>();		// Vart vi sparar våra tidningar
 	
 	// Skapar vår nyhetsbyrå samt ger den ett namn
-	public NewsAgency (String n) {
-		name = n;
-	}
+	public NewsAgency (String n) { name = n; }
 	
 	// Lägger till en tidning till våran nyhetsbyrå
-	public void addNewspaper (NewsPaper p) {
-		newsArchive.add(p);
-	}
+	public void addNewspaper (NewsPaper p) { newsArchive.add(p); }
 	
 	// Skriver ut vilka tidningar som är reggade med byrån
 	public String listNewsPapers () {
@@ -36,16 +32,16 @@ public class NewsAgency {
 	public void shareNews () {
 		// TODO Loopa igenom alla nyheter vi har och dela ut dem till de tidningar som saknar dem
 		
-		String str = "";
+		ArrayList<String> sNews = new ArrayList<String>();
 		
-		// Sparar alla nyheter samlade
 		for (int i = 0; i < newsArchive.size(); i++) {
-			str += newsArchive.get(i).getNews(i);
-			
-			// Tittar om samma nyhet (sekvens av tecken) är lika, om det inte är lika, lägger till nyhet
-			if (newsArchive.get(i).getNews(i).toString().compareTo(str) == 0)
-				System.out.print("Don't add");
+			sNews.addAll(newsArchive.get(i).getNews());
 		}
 		
+		for (int k = 0; k < sNews.size(); k++) {
+			
+			if (newsArchive.get(k).getSpecificNews(k) != sNews.get(k))
+				newsArchive.get(k).addNews(sNews.get(k));
+		}
 	}
 }

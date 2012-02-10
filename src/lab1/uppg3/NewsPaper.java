@@ -22,11 +22,23 @@ public class NewsPaper {
 	// Returnerar namnet på nyhetstidningen
 	public String getName () { return name; }
 	
-	// Hämtar en specifik nyhet
-	public String getNews (int n) { 
+	// Specifik nyhet
+	public String getSpecificNews (int n) {
 		
 		String str = news.get(n).toString();
 		return str;
+	}
+	
+	// Returnerar alla nyhter en tidning har
+	public ArrayList getNews () {
+		
+		ArrayList<String> allNews = new ArrayList<String>();	// Alla nyheter för en tidning
+		
+		for (int i = 0; i < news.size(); i++) {
+			allNews.add(news.get(i));
+		}
+		
+		return allNews;
 	}
 	
 	// Listar hur många nyheter vi har i vår tidning och låter användaren välja vilken som ska visas
