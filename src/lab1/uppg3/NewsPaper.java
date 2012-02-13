@@ -1,5 +1,5 @@
 /*
- * FÃ¶rfattare: Simon Metsi & Mathias Andreasen
+ * Författare: Simon Metsi & Mathias Andreasen
  * NewsPaper.java
  */
 package lab1.uppg3;
@@ -9,23 +9,23 @@ import java.util.Scanner;
 
 public class NewsPaper {
 	
-	private String name = "";				// namnet pÃ¥ nyhetstidningen
+	private String name = "";				// namnet på nyhetstidningen
 	private ArrayList<String> news = new ArrayList<String>();
 	private Scanner scan = new Scanner(System.in);
 
 	// Simpel konstruktor som instansierar ett nytt NewsPaper objekt och ger det ett namn
 	public NewsPaper (String n) { name = n; }
 	
-	// LÃ¤gger till nyheter till en nyhetstidning och skickar den till vÃ¥r nyhetsbyrÃ¥
+	// LÃ¤gger till nyheter till en nyhetstidning och skickar den till vår nyhetsbyrå
 	public void addNews (String s) { news.add(s); }
 	
-	// Returnerar namnet pÃ¥ nyhetstidningen
+	// Returnerar namnet på nyhetstidningen
 	public String getName () { return name; }
 	
 	// Returnerar alla nyhter en tidning har
 	public ArrayList getNews () {
 		
-		ArrayList<String> allNews = new ArrayList<String>();	// Alla nyheter fÃ¶r en tidning
+		ArrayList<String> allNews = new ArrayList<String>();	// Alla nyheter för en tidning
 		
 		for (int i = 0; i < news.size(); i++) {
 			allNews.add(news.get(i));
@@ -34,7 +34,7 @@ public class NewsPaper {
 		return allNews;
 	}
 	
-	// Listar hur mÃ¥nga nyheter vi har i vÃ¥r tidning och lÃ¥ter anvÃ¤ndaren vÃ¤lja vilken som ska visas
+	// Listar hur många nyheter vi har i vår tidning och låter användaren välja vilken som ska visas
 	public String printNews () {
 		
 		System.out.print("Just nu har " + this.name + " " + news.size() + "st nyheter, vilken vill du skriva ut?: ");
