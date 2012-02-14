@@ -4,14 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Stenaline implements Ferry {
-
-<<<<<<< HEAD
-	// Arraylist som sparar alla våra objekt från Vehicle
-	private ArrayList<Vehicle> pVehicle = new ArrayList<>();
-=======
 	// Arraylist som sparar alla vï¿½ra objekt frï¿½n Vehicle
 	ArrayList<Vehicle> pVehicle = new ArrayList<>();
->>>>>>> origin/mathias
 	
 	private ArrayList<Passenger> pPass = new ArrayList<>();
 	

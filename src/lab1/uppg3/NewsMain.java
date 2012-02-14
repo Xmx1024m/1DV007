@@ -10,16 +10,6 @@ public class NewsMain {
 
 	public static void main(String[] args) {
 		// Demonstrerar NewsPaper och NewsAgency
-<<<<<<< HEAD
-
-		NewsAgency TT = new NewsAgency("TT");
-		NewsPaper dn = new NewsPaper("Dagens Nyheter");
-		
-		TT.regNewsPaper(dn);
-
-		dn.addNews("Detta är en sträng");
-		System.out.println(dn.printNews());
-=======
 		
 		NewsAgency tt = new NewsAgency("Tidningar");
 		NewsPaper dn = new NewsPaper("Dagens Nyheter");
@@ -40,8 +30,5 @@ public class NewsMain {
 		System.out.print(tt.listNewsPapers());
 		
 		System.out.println(ab.printNews());
-		
-		
->>>>>>> origin/mathias
 	}
 }
