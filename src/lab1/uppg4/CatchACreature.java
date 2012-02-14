@@ -1,3 +1,7 @@
+/*
+ * Författare: Simon Metsi & Mathias Andreasen
+ * CatchACreature.java
+ */
 package lab1.uppg4;
 
 import javax.swing.JFrame;

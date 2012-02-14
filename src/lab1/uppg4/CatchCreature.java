@@ -1,3 +1,7 @@
+/*
+ * Författare: Simon Metsi & Mathias Andreasen
+ * CatchCreature.java
+ */
 package lab1.uppg4;
 
 import java.awt.Color;
