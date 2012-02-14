@@ -8,7 +8,7 @@ import javax.swing.ImageIcon;
 
 public class Creature {
 	
-	private ImageIcon img = new ImageIcon("C:\\Users\\mmpa\\Pictures\\taz.jpg");		// Vår monsterbild
+	private ImageIcon img = new ImageIcon("C:\\Users\\Metzzarn\\Documents\\Eclipse\\1DV007\\src\\lab1\\uppg4\\taz.jpg");		// Vår monsterbild
 	private double imgX = 0.0;		// X
 	private double imgY = 0.0;		// och Y koordinater
 	

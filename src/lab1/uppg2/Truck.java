@@ -1,3 +1,7 @@
+/*
+ * Författare: Simon Metsi & Mathias Andreasen
+ * Truck.java
+ */
 package lab1.uppg2;
 
 public class Truck extends Vehicle {

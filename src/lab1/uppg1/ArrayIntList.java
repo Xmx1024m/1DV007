@@ -1,3 +1,7 @@
+/*
+ * Författare: Simon Metsi & Mathias Andreasen
+ * ArrayIntList.java
+ */
 package lab1.uppg1;
 
 
