@@ -1,12 +1,20 @@
 package lab1.uppg4;
 
+import javax.swing.JFrame;
+
 public class CatchACreature {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		JFrame frame = new JFrame("Catch-A-Creature");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		CatchCreature panel = new CatchCreature();
+		
+		frame.add(panel);
+		frame.pack();
+		frame.setVisible(true);
+		
 
 	}
 
