@@ -4,7 +4,6 @@
  */
 package lab1.uppg4;
 
-import java.awt.Point;
 import java.util.Random;
 
 import javax.swing.ImageIcon;

@@ -4,8 +4,6 @@
  */
 package lab1.uppg4;
 
-import java.util.Timer;
-
 import javax.swing.JFrame;
 
 public class CatchACreature {

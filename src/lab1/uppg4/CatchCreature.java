@@ -10,7 +10,6 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.Random;
@@ -73,7 +72,6 @@ public class CatchCreature extends JPanel {
 
 		@Override
 		public void mouseClicked(MouseEvent event) {
-			System.out.println(event.getPoint().getX()+"\n"+ event.getPoint().getY());
 			if (taz.caughtCreature(event.getPoint().getX(), event.getPoint().getY())) {
 				String newpoint = Integer.toString(Integer.parseInt(score.getText())+1);
 				score.setText(newpoint);
