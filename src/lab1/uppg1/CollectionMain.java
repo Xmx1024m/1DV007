@@ -1,3 +1,7 @@
+/*
+ * Författare: Simon Metsi & Mathias Andreasen
+ * CollectionMain.java
+ */
 package lab1.uppg1;
 
 public class CollectionMain {

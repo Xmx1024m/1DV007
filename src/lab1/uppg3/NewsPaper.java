@@ -8,8 +8,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class NewsPaper {
-	
-	private String name = "";				// namnet på nyhetstidningen
+	private String name = ""; // Namnet på tidningen
 	private ArrayList<String> news = new ArrayList<String>();
 	private Scanner scan = new Scanner(System.in);
 

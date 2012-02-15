@@ -1,3 +1,7 @@
+/*
+ * Författare: Simon Metsi & Mathias Andreasen
+ * FerryMain.java
+ */
 package lab1.uppg2;
 import java.util.Scanner;
 

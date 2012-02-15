@@ -30,7 +30,5 @@ public class NewsMain {
 		System.out.print(tt.listNewsPapers());
 		
 		System.out.println(ab.printNews());
-		
-		
 	}
 }

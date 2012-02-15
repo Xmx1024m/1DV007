@@ -1,3 +1,7 @@
+/*
+ * Författare: Simon Metsi & Mathias Andreasen
+ * ArrayIntStack.java
+ */
 package lab1.uppg1;
 
 public class ArrayIntStack extends AbstractIntCollection implements IntStack {
