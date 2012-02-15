@@ -4,13 +4,10 @@
  */
 package lab1.uppg4;
 
-import java.awt.Graphics;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.Point;
 import java.util.Random;
 
 import javax.swing.ImageIcon;
-import javax.swing.Timer;
 
 public class Creature {
 	
@@ -21,14 +18,17 @@ public class Creature {
 	private int imgY = 0;		// och Y koordinater
 	
 	
-	// Instansierar ett creature objekt med våran bild och koordinater
+	// Instansierar ett creature objekt med vår bild och koordinater
 	public Creature () {
 		rand();
 	}
 	
 	// Metod som tittar om spelaren tryckt på monstret
-	public boolean caughtCreature () {
-		
+	public boolean caughtCreature (double x, double y) {
+		if (x >= imgX && x<=(imgX+150)
+			&& y>= imgY && y<= imgY+122) {
+			return true;
+		}
 		return false;
 	}
 	

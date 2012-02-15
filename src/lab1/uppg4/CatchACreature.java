@@ -15,7 +15,6 @@ public class CatchACreature {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		CatchCreature panel = new CatchCreature();
-		
 		frame.add(panel);
 		frame.pack();
 		frame.setVisible(true);
