@@ -23,7 +23,7 @@ import javax.swing.Timer;
 public class CatchCreature extends JPanel {
 	private Creature taz = new Creature();
 	private Random rnd = new Random();
-	private int delay = 300+rnd.nextInt(2000);
+	private int delay = 400+rnd.nextInt(2000);
 	private Timer timer;
 	private JLabel score = new JLabel("0");
 	
@@ -45,7 +45,7 @@ public class CatchCreature extends JPanel {
 		
 		score.setBounds(285, 2, 120, 20);
 		
-		JButton reset = new JButton("Reset");
+		JButton reset = new JButton("Nollställ");
 		reset.addActionListener(new resetListener());
 		reset.setBounds(2, 2, 80, 20);
 		
@@ -63,6 +63,7 @@ public class CatchCreature extends JPanel {
 	private class TimerListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent event) {
+			rnd = new Random();
 			taz.rand();
 			repaint();
 		}
