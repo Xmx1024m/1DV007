@@ -1,18 +1,18 @@
 /*
  * Författare: Simon Metsi & Mathias Andreasen
- * CatchACreature.java
+ * BouncingBallsMain.java
  */
-package lab1.uppg4;
+package lab1.uppg5;
 
 import javax.swing.JFrame;
 
-public class CatchACreature {
 
+public class BouncingBallsMain {
 	public static void main(String[] args) {
-		JFrame frame = new JFrame("Catch-A-Creature");
+		JFrame frame = new JFrame("Bouncing Balls");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		CatchCreature panel = new CatchCreature();
+		BouncingBalls panel = new BouncingBalls();
 		frame.add(panel);
 		frame.pack();
 		frame.setVisible(true);

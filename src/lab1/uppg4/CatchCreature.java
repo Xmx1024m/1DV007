@@ -32,20 +32,21 @@ public class CatchCreature extends JPanel {
 		setPreferredSize(new Dimension(600, 600));
 		setFont(new Font("Arial", Font.BOLD, 32));
 		
+		//Gör en ny timer och startar den.
 		timer = new Timer(delay, new TimerListener());
 		timer.start();
 		
-		addMouseListener (new catchListener());
 		
 		JPanel creaturePanel = new JPanel();
-
 		JLabel scoreLabel = new JLabel("Poäng: ");
-		scoreLabel.setBounds(240, 2, 120, 20);
-		
-		score.setBounds(285, 2, 120, 20);
-		
 		JButton reset = new JButton("Nollställ");
-		reset.addActionListener(new resetListener());
+		
+		reset.addActionListener(new resetListener()); //Lägger till en lyssnare för "Reset"-knappen
+		addMouseListener (new catchListener()); //Lägger till en lyssnare för musen.
+		
+		// Bestämmer var "Reset", "Poäng: " och poängen ska vara på panelen.
+		scoreLabel.setBounds(240, 2, 120, 20);
+		score.setBounds(285, 2, 120, 20);
 		reset.setBounds(2, 2, 80, 20);
 		
 		add(reset);
@@ -54,16 +55,15 @@ public class CatchCreature extends JPanel {
 		add(scoreLabel);
 	}
 	
-	public void paintComponent(Graphics g) {
+	public void paintComponent(Graphics g) { //Ritar upp taz.
 		super.paintComponent(g);
 		taz.getImg().paintIcon(this, g, taz.getX(), taz.getY());
 	}
 	
 	private class TimerListener implements ActionListener {
 		@Override
-		public void actionPerformed(ActionEvent event) {
-			rnd = new Random();
-			taz.rand();
+		public void actionPerformed(ActionEvent event) { //Efter en rand tidpunkt målas creature ut igen.
+			taz.rand(); //Ger creature nya koordinater
 			repaint();
 		}
 	}
@@ -71,8 +71,9 @@ public class CatchCreature extends JPanel {
 	private class catchListener extends MouseAdapter {
 
 		@Override
-		public void mouseClicked(MouseEvent event) {
-			if (taz.caughtCreature(event.getPoint().getX(), event.getPoint().getY())) {
+		public void mouseClicked(MouseEvent event) { //if-sats som kontrollerar om creature är på den plats man klickat.
+			if (taz.caughtCreature(event.getPoint().getX(), event.getPoint().getY())) { //Skickar med koordinaterna där man klickade.
+				//Lägger till 1 poäng.
 				String newpoint = Integer.toString(Integer.parseInt(score.getText())+1);
 				score.setText(newpoint);
 			}
@@ -82,7 +83,7 @@ public class CatchCreature extends JPanel {
 	private class resetListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent event) {
-			score.setText("0");
+			score.setText("0"); //Återställer poängen vid klick på "Reset"-knappen.
 			
 		}
 	}
