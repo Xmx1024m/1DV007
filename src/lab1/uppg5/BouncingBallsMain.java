@@ -4,6 +4,8 @@
  */
 package lab1.uppg5;
 
+import java.awt.Color;
+
 import javax.swing.JFrame;
 
 

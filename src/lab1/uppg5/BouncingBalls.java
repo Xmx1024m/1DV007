@@ -26,10 +26,12 @@ public class BouncingBalls extends JPanel {
 	
 	
 	public BouncingBalls() {
-		setBackground(Color.white);
+		setLayout(null);
+		setBackground(Color.WHITE);
 		setPreferredSize(new Dimension(600, 600));
 		setFont(new Font("Arial", Font.BOLD, 32));
 		
+		//Gör en ny imer och startar den
 		timer = new Timer(33, new TimerListener());
 		timer.start();
 		
