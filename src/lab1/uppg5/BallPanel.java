@@ -28,6 +28,7 @@ public class BallPanel extends JPanel {
 	private Random rnd;
 	private Timer timer;
 	private int x, y, moveX, moveY;
+	private Ball ball;
 	
 	
 	// Ställer in panelen, inkluderar timern för animation
@@ -39,7 +40,7 @@ public class BallPanel extends JPanel {
 		
 		x = 0;
 		y = 200;
-		moveX = moveY = 5;
+		moveX = 5;
 		
 		bollKnapp = new JButton("Ny Boll");
 		bollKnapp.addActionListener(new buttonListener());
