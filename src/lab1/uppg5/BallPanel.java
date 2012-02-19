@@ -6,12 +6,11 @@ package lab1.uppg5;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Random;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.Timer;
@@ -19,16 +18,18 @@ import javax.swing.Timer;
 
 public class BallPanel extends JPanel {
 	
-	private final int WIDTH = 600, HEIGHT = 300;
-	private final int DELAY = 20, IMAGE_SIZE = 35;
+	private final int WIDTH = 640, HEIGHT = 480;
+	private final int DELAY = 20;
 	
 	private JButton bollKnapp;
 	
-	private ImageIcon image;
-	private Random rnd;
+	private int ballSpeedX, ballSpeedY;
+	private int ballX, ballY;
+	
+	private Random rnd = new Random();
 	private Timer timer;
-	private int x, y, moveX, moveY;
-	private Ball ball;
+	
+	private ArrayList<Ball> balls = new ArrayList<Ball>();
 	
 	
 	// Ställer in panelen, inkluderar timern för animation
@@ -36,11 +37,8 @@ public class BallPanel extends JPanel {
 		
 		timer = new Timer(DELAY, new BallListener());
 		
-		image = new ImageIcon ("C:\\Users\\mmpa\\workspace\\1DV007\\src\\lab1\\uppg5\\happyface.gif");
-		
-		x = 0;
-		y = 200;
-		moveX = 5;
+		Ball boll = new Ball();
+		balls.add(boll);
 		
 		bollKnapp = new JButton("Ny Boll");
 		bollKnapp.addActionListener(new buttonListener());
@@ -50,43 +48,56 @@ public class BallPanel extends JPanel {
 		setBackground(Color.white);
 		setLayout(null);
 		add(bollKnapp);
+		add(boll);
+		
+		
+		
 		timer.start();
 	}
 	
-	// Ritar bilden i den nuvarnade positionen
-	public void paintComponent (Graphics page) {
-		super.paintComponent(page);
-		image.paintIcon(this, page, x, y);
-	}
 	
-	// Actionlistener för vår timer
+	
+	
 	private class BallListener implements ActionListener {
 		
 		// Uppdaterar positionen av bilden och riktning när bollen når kanten, vid varje timer-intervall
 		public void actionPerformed (ActionEvent event) {
-			x += moveX;
-			y += moveY;
 			
-			if (x <= 0 || x >= WIDTH-IMAGE_SIZE)
-				moveX = moveX * -1;
+			for (Ball b : balls) {
+				
+				b.setX(b.getX() + b.getspeedX());
+				b.setY(b.getY() + b.getspeedY());
+				
+				
+				if (b.getX() - b.getRadius() < 0) {
+					b.setspeedX(-b.getspeedX());
+		            b.setX(b.getRadius());
+		        } else if (b.getX() + b.getRadius() > WIDTH) {
+		        	b.setspeedX(-b.getspeedX());
+		            b.setX(WIDTH - b.getRadius());
+		        }
+				
+				if (b.getY() - b.getRadius() < 0) {
+					b.setspeedY(-b.getspeedY());
+		            b.setY(b.getRadius());
+	             } else if (b.getY() + b.getRadius() > (HEIGHT)) {
+	            	 b.setspeedY(-b.getspeedY());
+			         b.setY((HEIGHT) - b.getRadius());
+	             }
+				
+				b.paintComponent(getGraphics());
+				
+			}
 			
-			if (y <= 0 || y <= HEIGHT-IMAGE_SIZE)
-				moveY = moveY * -1;
-			
-			repaint();
 		}
 	}
-	
+		
 	private class buttonListener implements ActionListener {
 		
 		// Skapar en ny boll för varje tryckning
 		public void actionPerformed (ActionEvent event) {
-			
-			int delay = (rnd.nextInt());
-			timer.setDelay(delay);
-			timer.restart();
+			Ball boll = new Ball();
+			balls.add(boll);
 		}
 	}
-	
-
 }
