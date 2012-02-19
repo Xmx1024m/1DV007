@@ -12,7 +12,7 @@ import javax.swing.JFrame;
 
 public class CatchACreature {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		JFrame frame = new JFrame("Catch-A-Creature");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
