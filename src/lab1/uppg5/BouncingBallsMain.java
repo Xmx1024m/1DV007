@@ -4,10 +4,7 @@
  */
 package lab1.uppg5;
 
-import java.awt.Color;
-
 import javax.swing.JFrame;
-
 
 public class BouncingBallsMain {
 	public static void main(String[] args) {

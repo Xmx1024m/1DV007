@@ -12,18 +12,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
 public class BouncingBalls extends JPanel {
-	private ImageIcon img = new ImageIcon("C:\\Users\\Metzzarn\\Documents\\Eclipse\\1DV007\\src\\lab1\\uppg5\\ball.png");
-	private int imgX =300;
-	private int imgY = 300;
 	private Timer timer;
 	private ArrayList<TheBall> balls = new ArrayList<>();
-	
+	TheBall aBall = new TheBall();	
 	
 	public BouncingBalls() {
 		setLayout(null);
@@ -31,33 +27,27 @@ public class BouncingBalls extends JPanel {
 		setPreferredSize(new Dimension(600, 600));
 		setFont(new Font("Arial", Font.BOLD, 32));
 		
-		//Gör en ny imer och startar den
-		timer = new Timer(33, new TimerListener());
+		//Gör en ny timer och startar den.
+		timer = new Timer(100, new TimerListener());
 		timer.start();
 		
-		JPanel ballPanel = new JPanel();
-		ballPanel.setBackground(Color.white);
-		
 		JButton newBall = new JButton("Ny Boll");
-		newBall.setBounds(100, 2, 50, 22);
+		newBall.setBounds(100, 2, 75, 22);
 		newBall.addActionListener(new addBallListener());
+
+		add(newBall);
 	}
-	
-	public ImageIcon getImg() {
-		return img;
-	}
-	
-	public int getX() { return imgY; }
-	public int getY() { return imgX; }
 	
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		getImg().paintIcon(this, g, getX(), getY());
+		aBall.getImg().paintIcon(this, g, getX(), getY());
 	}
-	
+
 	private class TimerListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent event) {
+			aBall.moveBall();
+			repaint();
 		}
 	}
 	
@@ -65,7 +55,8 @@ public class BouncingBalls extends JPanel {
 		@Override
 		public void actionPerformed(ActionEvent event) {
 			TheBall aBall = new TheBall();
-			repaint();
+			aBall.moveBall();
 		}
 	}
+
 }

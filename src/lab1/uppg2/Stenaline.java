@@ -73,7 +73,7 @@ public class Stenaline implements Ferry {
 			countMoney();
 		}
 		else
-			System.err.println("Vi har inte plats fï¿½r mer fordon pï¿½ fï¿½rjan");
+			System.err.println("Vi har inte plats för mer fordon på färjan");
 		
 	}
 
@@ -85,7 +85,7 @@ public class Stenaline implements Ferry {
 			countMoney();
 		}
 		else
-			System.err.println("Vi har inte plats fï¿½r mer passagerare");		
+			System.err.println("Vi har inte plats för mer passagerare");		
 	}
 
 	@Override

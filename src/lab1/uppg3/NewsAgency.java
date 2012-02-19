@@ -1,5 +1,5 @@
 /*
- * Fï¿½rfattare: Simon Metsi & Mathias Andreasen
+ * Författare: Simon Metsi & Mathias Andreasen
  * NewsAgency.java
  */
 package lab1.uppg3;
@@ -9,15 +9,15 @@ import java.util.ArrayList;
 public class NewsAgency {
 	
 	private String name = "";
-	private ArrayList<NewsPaper> newsArchive = new ArrayList<NewsPaper>();		// Vart vi sparar vÃ¥ra tidningar
+	private ArrayList<NewsPaper> newsArchive = new ArrayList<NewsPaper>();		// Vart vi sparar våra tidningar
 	
-	// Skapar vÃ¥r nyhetsbyrÃ¥ samt ger den ett namn
+	// Skapar vår nyhetsbyrå samt ger den ett namn
 	public NewsAgency (String n) { name = n; }
 	
-	// LÃ¤gger till en tidning till vÃ¥ran nyhetsbyrÃ¥
+	// Lägger till en tidning till vår nyhetsbyrå
 	public void addNewspaper (NewsPaper p) { newsArchive.add(p); }
 	
-	// Skriver ut vilka tidningar som Ã¤r reggade med byrÃ¥n
+	// Skriver ut vilka tidningar som är reggade med byrån
 	public String listNewsPapers () {
 		
 		String str = "";
@@ -38,7 +38,7 @@ public class NewsAgency {
 			sNews.addAll(newsArchive.get(i).getNews());
 		}
 		
-		// Sparar varje nyhet i en strÃ¤ng och tittar om den strÃ¤ngen inte finns i en viss tidning, och lÃ¤gger till den 
+		// Sparar varje nyhet i en sträng och tittar om den strägen inte finns i en viss tidning, och lägger till den 
 		for (int j = 0; j < newsArchive.size(); j++) {
 			for (int k = 0; k < sNews.size(); k++) {
 				String str = sNews.get(k);

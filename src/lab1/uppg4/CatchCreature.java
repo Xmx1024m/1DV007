@@ -36,8 +36,6 @@ public class CatchCreature extends JPanel {
 		timer = new Timer(delay, new TimerListener());
 		timer.start();
 		
-		
-		JPanel creaturePanel = new JPanel();
 		JLabel scoreLabel = new JLabel("Poäng: ");
 		JButton reset = new JButton("Nollställ");
 		
@@ -50,7 +48,6 @@ public class CatchCreature extends JPanel {
 		reset.setBounds(2, 2, 80, 20);
 		
 		add(reset);
-		add(creaturePanel);
 		add(score);
 		add(scoreLabel);
 	}
@@ -69,13 +66,14 @@ public class CatchCreature extends JPanel {
 	}
 	
 	private class catchListener extends MouseAdapter {
-
 		@Override
 		public void mouseClicked(MouseEvent event) { //if-sats som kontrollerar om creature är på den plats man klickat.
 			if (taz.caughtCreature(event.getPoint().getX(), event.getPoint().getY())) { //Skickar med koordinaterna där man klickade.
 				//Lägger till 1 poäng.
 				String newpoint = Integer.toString(Integer.parseInt(score.getText())+1);
 				score.setText(newpoint);
+				taz.rand(); //Ger creature nya koordinater
+				repaint();
 			}
 		}		
 	}
