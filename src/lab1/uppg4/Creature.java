@@ -10,7 +10,7 @@ import javax.swing.ImageIcon;
 
 public class Creature {
 	
-	private ImageIcon img = new ImageIcon("C:\\Users\\Metzzarn\\Documents\\Eclipse\\1DV007\\src\\lab1\\uppg4\\taz.jpg"); // Vår monsterbild
+	private ImageIcon img = new ImageIcon("C:\\Users\\mmpa\\workspace\\1DV007\\src\\lab1\\uppg4\\taz.jpg"); // Vår monsterbild
 	private Random rnd = new Random();
 	
 	private int imgX = 0;		// X
