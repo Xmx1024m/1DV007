@@ -15,7 +15,7 @@ public class NewsPaper {
 	// Simpel konstruktor som instansierar ett nytt NewsPaper objekt och ger det ett namn
 	public NewsPaper (String n) { name = n; }
 	
-	// LÃ¤gger till nyheter till en nyhetstidning och skickar den till vår nyhetsbyrå
+	// Lägger till nyheter till en tidning och skickar den till vår nyhetsbyrå
 	public void addNews (String s) { news.add(s); }
 	
 	// Returnerar namnet på nyhetstidningen

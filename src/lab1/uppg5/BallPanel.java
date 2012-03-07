@@ -19,16 +19,17 @@ import javax.swing.Timer;
 
 public class BallPanel extends JPanel {
 	
-	private final int WIDTH = 600, HEIGHT = 300;
-	private final int DELAY = 20, IMAGE_SIZE = 35;
+	private final int WIDTH = 640, HEIGHT = 480;
+	private final int DELAY = 10, IMAGE_SIZE = 35;
 	
 	private JButton bollKnapp;
 	
 	private ImageIcon image;
 	private Random rnd;
 	private Timer timer;
-	private int x, y, moveX, moveY;
+	private int moveX, moveY, speedX, speedY;
 	private Ball ball;
+	private int ballRadius = 35;
 	
 	
 	// Ställer in panelen, inkluderar timern för animation
@@ -36,11 +37,12 @@ public class BallPanel extends JPanel {
 		
 		timer = new Timer(DELAY, new BallListener());
 		
-		image = new ImageIcon ("C:\\Users\\mmpa\\workspace\\1DV007\\src\\lab1\\uppg5\\happyface.gif");
+		image = new ImageIcon ("C:\\Users\\metzzarn\\Documents\\Eclipse\\1DV007\\src\\lab1\\uppg5\\happyface.gif");
 		
-		x = 0;
-		y = 200;
-		moveX = 5;
+		moveX = 50;
+		moveY = 200;
+		speedX = 2;
+		speedY = 3;
 		
 		bollKnapp = new JButton("Ny Boll");
 		bollKnapp.addActionListener(new buttonListener());
@@ -56,7 +58,7 @@ public class BallPanel extends JPanel {
 	// Ritar bilden i den nuvarnade positionen
 	public void paintComponent (Graphics page) {
 		super.paintComponent(page);
-		image.paintIcon(this, page, x, y);
+		image.paintIcon(this, page, moveX, moveY);
 	}
 	
 	// Actionlistener för vår timer
@@ -64,16 +66,26 @@ public class BallPanel extends JPanel {
 		
 		// Uppdaterar positionen av bilden och riktning när bollen når kanten, vid varje timer-intervall
 		public void actionPerformed (ActionEvent event) {
-			x += moveX;
-			y += moveY;
-			
-			if (x <= 0 || x >= WIDTH-IMAGE_SIZE)
-				moveX = moveX * -1;
-			
-			if (y <= 0 || y <= HEIGHT-IMAGE_SIZE)
-				moveY = moveY * -1;
-			
-			repaint();
+				moveX += speedX;
+				moveY += speedY;
+				
+				if (moveX - ballRadius < 0) {
+					speedX = - speedX;
+					moveX = ballRadius;
+				} else if (moveX + ballRadius > WIDTH) {
+					speedX = - speedX;
+					moveX = WIDTH-ballRadius;
+				}
+				
+				if (moveY - ballRadius < 0) {
+					speedY = - speedY;
+					moveY = ballRadius;
+				} else if (moveY + ballRadius > HEIGHT) {
+					speedY = -speedY;
+					moveY = HEIGHT-ballRadius;
+				}
+				
+				repaint();
 		}
 	}
 	
