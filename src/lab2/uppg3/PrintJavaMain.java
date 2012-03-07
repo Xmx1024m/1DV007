@@ -1,5 +1,5 @@
 /*
- * Författare: Simon Metsi & Mathias Andreasen
+ * Fï¿½rfattare: Simon Metsi & Mathias Andreasen
  * PrintJavaMain.java
  */
 package lab2.uppg3;
@@ -22,7 +22,6 @@ public class PrintJavaMain {
 			System.out.println("Hittar inte katalogen: " + dir);
 		
 		visitSub(dir);
-		System.out.print("");
 
 	}
 	
