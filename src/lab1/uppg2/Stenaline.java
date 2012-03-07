@@ -1,17 +1,18 @@
 /*
- * Författare: Simon Metsi & Mathias Andreasen
+ * Fï¿½rfattare: Simon Metsi & Mathias Andreasen
  * Stenaline.java
  */
 package lab1.uppg2;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Vector;
 
 public class Stenaline implements Ferry {
 	// Arraylist som sparar alla vï¿½ra objekt frï¿½n Vehicle
-	ArrayList<Vehicle> pVehicle = new ArrayList<>();
+	ArrayList<Vehicle> pVehicle = new ArrayList<Vehicle>();
 	
-	private ArrayList<Passenger> pPass = new ArrayList<>();
+	private ArrayList<Passenger> pPass = new ArrayList<Passenger>();
 	
 	@Override
 	public int countPassengers() {
