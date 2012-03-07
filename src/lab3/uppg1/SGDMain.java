@@ -4,6 +4,8 @@
  */
 package lab3.uppg1;
 
+import java.util.Random;
+
 public class SGDMain {
 	
 	/*	TAGET FRÅN WIKIPEDIA
@@ -29,8 +31,25 @@ public class SGDMain {
 
 	public static void main(String[] args) {
 		
-		System.out.println(SGD(7, 2));
-
+		// Räknar ut fem instanser av SGD och ändrar plats på a och b om a < b
+		Random rnd = new Random();
+		
+		for (int i = 0; i <= 5; i++) {
+			
+			int a = rnd.nextInt(1000) + 1;
+			int b = rnd.nextInt(1000) + 1;
+			
+			if (a < b) {
+				
+				int A = b;
+				int B = a;
+				
+				a = A;
+				b = B;
+			}
+			
+			System.out.println("SGD("+a+","+b+") = " + SGD(a,b));
+		}
 	}
 
 }
