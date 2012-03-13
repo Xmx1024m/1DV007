@@ -39,7 +39,7 @@ public class SGDMain {
 			int a = rnd.nextInt(1000) + 1;
 			int b = rnd.nextInt(1000) + 1;
 			
-			if (a < b) {
+			if (a < b) { 
 				
 				int A = b;
 				int B = a;
