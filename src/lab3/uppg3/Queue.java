@@ -25,12 +25,12 @@ import java.util.Iterator;
 
 public interface Queue {
 	
-	int size();								// current queue size
-	boolean isEmpty();						// true if queue is empty
-	void enqueue(Object element); 			// add element at end of queue
-	Object dequeue();						// return and remove first element
-	Object first();							// return (without removing) first element
-	Object last();							// return (without removing) last element
-	Iterator iterator();					// element iterator
+	int size();													// current queue size
+	boolean isEmpty();											// true if queue is empty
+	void enqueue(Object element); 								// add element at end of queue
+	Object dequeue() throws QueueException;						// return and remove first element
+	Object first() throws QueueException;						// return (without removing) first element
+	Object last() throws QueueException;												// return (without removing) last element
+	Iterator iterator();										// element iterator
 
 }
