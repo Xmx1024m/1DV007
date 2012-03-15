@@ -1,5 +1,6 @@
 package lab3.uppg3;
 
+import java.util.Iterator;
 import java.util.Random;
 
 /**
@@ -62,6 +63,17 @@ public class QueueMain {
 			System.out.println(que.last());
 		} catch (QueueException e) {
 			e.printStackTrace();
+		}
+		
+		// Lägger till fler värden för att kunna iterera över dem
+		que.enqueue(6);
+		que.enqueue(666);
+		que.enqueue(72);
+		
+		// Iterator()
+		Iterator itr = que.iterator();
+		while (itr.hasNext()) {
+			System.out.println(itr.next());
 		}
 		
 

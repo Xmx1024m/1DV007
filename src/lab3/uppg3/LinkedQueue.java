@@ -2,6 +2,8 @@ package lab3.uppg3;
 
 import java.util.Iterator;
 
+import javax.management.RuntimeErrorException;
+
 /**
  * Implementerar {@link lab3.uppg3.Queue}
  * 
@@ -95,8 +97,23 @@ public class LinkedQueue implements Queue {
 	 * Itererar över den givna kön
 	 */
 	public Iterator iterator() {
-		// TODO Skriv klart iteratorn
-		return null;
+		return new QueueIterator();
+	}
+	
+	// Inception klass... yo daawgh!
+	class QueueIterator implements Iterator<Integer> {
+		private Node node = head; 		// node satt till head i kön
+		public Integer next() {			// metod för att få ut nästa element i kön
+			int v = node.value;
+			node = node.next;			// Går ett steg fram så vi inte går runt igen
+			return v;
+		}
+		
+		@Override
+		public boolean hasNext() { return node != null; }
+		@Override
+		public void remove() { throw new RuntimeException("remove() is a pain inte the arse, please don't use it :)");}
+		
 	}
 
 }
