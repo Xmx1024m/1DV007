@@ -55,9 +55,6 @@ public class BallPanel extends JPanel {
 		timer.start();
 	}
 	
-	
-	
-	
 	private class BallListener implements ActionListener {
 		
 		// Uppdaterar positionen av bilden och riktning när bollen når kanten, vid varje timer-intervall
