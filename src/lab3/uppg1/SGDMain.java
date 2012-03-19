@@ -5,6 +5,11 @@
 package lab3.uppg1;
 
 public class SGDMain {
+	
+	/**
+	 * Simpel JAVADOC KOD
+	 * @param args
+	 */
 
 	public static void main(String[] args) {
 		
