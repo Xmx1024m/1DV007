@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 public class IdentifyWordsMain {
 
 	/**
-	 * @param args
+	 * Nu ska det funka
 	 */
 	public static void main(String[] args) {
 		
