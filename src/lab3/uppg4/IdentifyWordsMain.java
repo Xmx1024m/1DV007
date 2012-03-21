@@ -1,27 +1,23 @@
 package lab3.uppg4;
 
-<<<<<<< HEAD
-import java.util.Scanner;
-=======
 
+import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
->>>>>>> c4f08516adb5a2fee413389b261dec3702b13c12
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class IdentifyWordsMain {
-<<<<<<< HEAD
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		
-		// Pattern för att ta bort siffror och punkter samt "-"
+		// Pattern fï¿½r att ta bort siffror och punkter samt "-"
 		Pattern p = Pattern.compile("[^-^0-9^.]");
 		
 		String input = "Vi drack 72 liter";
@@ -40,14 +36,13 @@ public class IdentifyWordsMain {
 	}
 
 }
-=======
 	
-	public static FileReader fr;		// Fillläsare som fileToString använder
-	public static String s = "";		// Vart vi sparar allt text från Filläsaren ovan
+	public static FileReader fr;		// Filllï¿½sare som fileToString anvï¿½nder
+	public static String s = "";		// Vart vi sparar allt text frï¿½n Fillï¿½saren ovan
 	
 	/*
-	 *  Creative.commons.IO har ett väldigt fiffigt och snyggt sätt att göra strängar av filer (FileUtils.fileToString(File f, String s))
-	 * som vi tänkte använda här, dock buggade skiten någon fruktansvärt så lösningen nedan är en "ripp-off" av samma funktion.
+	 *  Creative.commons.IO har ett vï¿½ldigt fiffigt och snyggt sï¿½tt att gï¿½ra strï¿½ngar av filer (FileUtils.fileToString(File f, String s))
+	 * som vi tï¿½nkte anvï¿½nda hï¿½r, dock buggade skiten nï¿½gon fruktansvï¿½rt sï¿½ lï¿½sningen nedan ï¿½r en "ripp-off" av samma funktion.
 	 */
 	public static String fileToString(File f) throws IOException {
 		
@@ -57,14 +52,14 @@ public class IdentifyWordsMain {
 			int c = fr.read();
 			/*
 			 * fr.read() returnerar en Integer som representerar ett tecken.
-			 * Nedan låter vi loopen köras så länge vår int c inte blir -1, alltså då vi nått slutet av filen.
-			 * Så länge while-loopen körs, lägger vi till det typkonverterade värdet på c till får String s
+			 * Nedan lï¿½ter vi loopen kï¿½ras sï¿½ lï¿½nge vï¿½r int c inte blir -1, alltsï¿½ dï¿½ vi nï¿½tt slutet av filen.
+			 * Sï¿½ lï¿½nge while-loopen kï¿½rs, lï¿½gger vi till det typkonverterade vï¿½rdet pï¿½ c till fï¿½r String s
 			 */
 			while (c != -1) {
 				c = fr.read();
 				s += (char) c;
 			}
-		} catch (IOException e) {		// Fånga ev. exceptions
+		} catch (IOException e) {		// Fï¿½nga ev. exceptions
 			e.printStackTrace();
 		}
 		
@@ -74,24 +69,23 @@ public class IdentifyWordsMain {
 	
 	public static void main(String[] args) throws IOException {
 		
-		File fil_in = new File("C:\\Users\\Mathias\\workspace\\1DV007\\src\\lab3\\uppg4\\Champagne.txt");		// Fil att läsa från
+		File fil_in = new File("C:\\Users\\Mathias\\workspace\\1DV007\\src\\lab3\\uppg4\\Champagne.txt");		// Fil att lï¿½sa frï¿½n
 		File fil_out = new File("C:\\Users\\Mathias\\workspace\\1DV007\\src\\lab3\\uppg4\\ord.txt");			// Fil att skriva till
-		FileWriter wr = new FileWriter(fil_out);																// Filskrivare för att skriva till filer
+		FileWriter wr = new FileWriter(fil_out);																// Filskrivare fï¿½r att skriva till filer
 		
 		String fil_in_String = fileToString(fil_in);
 		
-		Pattern p = Pattern.compile("[^-^0-9^.]");		// Pattern för att ta bort siffror och punkter samt "
+		Pattern p = Pattern.compile("[^-^0-9^.]");		// Pattern fï¿½r att ta bort siffror och punkter samt "
 		
 		Matcher m = p.matcher(fil_in_String);
 		
 		/*
-		 * Så länge vår matcher hittar något ord som stämmer överens med vårt pattern ovan skriver den just den gruppen 
-		 * till får fil_out
+		 * Sï¿½ lï¿½nge vï¿½r matcher hittar nï¿½got ord som stï¿½mmer ï¿½verens med vï¿½rt pattern ovan skriver den just den gruppen 
+		 * till fï¿½r fil_out
 		 */
 		while (m.find()) {
 			wr.write(m.group());
 		}
-		wr.close();			// glöm inte att stänga filen när vi har skrivit klart
+		wr.close();			// glï¿½m inte att stï¿½nga filen nï¿½r vi har skrivit klart
 	}
 }
->>>>>>> c4f08516adb5a2fee413389b261dec3702b13c12
