@@ -1,22 +1,30 @@
+/*
+ * Authors: Simon Metsi & Mathias Andreasen
+ * Player.java
+ */
 package Spel;
 
-import java.awt.Color;
-import java.awt.Graphics;
-
-public class Player extends AbstractGameObject {
-
+public class Player {
+	
+	private int x, y, width, height;
+	
 	public Player(int x, int y, int width, int height) {
-		super(x, y, width, height);
+		
+		this.x = x;
+		this.y = y;
+		this.width = width;
+		this.height = height;
 		
 	}
 	
-	public void setY(int dy) { this.y += dy; }
+	public int getX() { return x; }
+	public int getY() { return y; }
+	public int getWidth() { return width; }
+	public int getHeight() { return height; }
 	
-	public void paintComponent (Graphics g) {
-		super.paintComponent(g);
+	public void setY(int y) {	
 		
-		g.setColor(Color.white);
-		g.fillRect(10, (600/2), 5, 25);
+		this.y += y;
 	}
 
 }

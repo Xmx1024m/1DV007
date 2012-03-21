@@ -1,6 +1,7 @@
 package Spel;
 
 import javax.swing.JFrame;
+import lab3.uppg4.*;
 
 public class PongGame {
 
@@ -17,6 +18,7 @@ public class PongGame {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 
+		
 	}
 
 }
