@@ -1,5 +1,5 @@
 /*
- * Författare: Simon Metsi & Mathias Andreasen
+ * Författare: Simon Metsi &amp; Mathias Andreasen
  * CatchCreature.java
  */
 package lab1.uppg4;

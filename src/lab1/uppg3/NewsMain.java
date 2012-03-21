@@ -4,11 +4,12 @@
  */
 package lab1.uppg3;
 
-import java.util.Scanner;
+
 
 public class NewsMain {
 
 	public static void main(String[] args) {
+		
 		// Demonstrerar NewsPaper och NewsAgency
 		
 		NewsAgency tt = new NewsAgency("Tidningar");
@@ -26,9 +27,5 @@ public class NewsMain {
 		tt.addNewspaper(ab);
 		
 		tt.shareNews();
-		
-		System.out.print(tt.listNewsPapers());
-		
-		System.out.println(ab.printNews());
 	}
 }

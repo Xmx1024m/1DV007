@@ -1,10 +1,6 @@
 /*
-<<<<<<< HEAD
- * Bajs
-=======
  * Författare: Simon Metsi & Mathias Andreasen
  * CatchACreature.java
->>>>>>> Simon
  */
 package lab1.uppg4;
 
