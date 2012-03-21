@@ -9,6 +9,7 @@ import java.util.Random;
 public class SGDMain {
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 	/*	TAGET FRÅN WIKIPEDIA
 	 * Algoritmen kan beskrivas på följande sätt:
 =======
@@ -17,6 +18,10 @@ public class SGDMain {
 	 * @param args
 	 */
 >>>>>>> d35ae133d8d422e87712f49c9cc78812a27143c7
+=======
+	/*	TAGET FRÅN WIKIPEDIA
+	 * Algoritmen kan beskrivas på följande sätt:
+>>>>>>> c4f08516adb5a2fee413389b261dec3702b13c12
 
      * 1. Två heltal a och b, där a > b är givna.
      * 2. Om b = 0 är algoritmen klar och svaret är a.
