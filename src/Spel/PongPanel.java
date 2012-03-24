@@ -27,6 +27,7 @@ public class PongPanel extends JPanel {
 		
 		setBackground(Color.black);
 		setPreferredSize(new Dimension(WIDTH, HEIGHT));
+		setFocusable(true);
 		
 	}
 	
@@ -51,7 +52,6 @@ public class PongPanel extends JPanel {
 			
 			case KeyEvent.VK_W:
 				p1.setY(-5);
-				System.out.print("Upp");
 				break;
 				
 			case KeyEvent.VK_S:
