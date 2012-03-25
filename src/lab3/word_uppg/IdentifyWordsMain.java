@@ -1,14 +1,7 @@
-<<<<<<< HEAD:src/lab3/uppg4/IdentifyWordsMain.java
-package lab3.uppg4;
 
-import java.util.Scanner;
-=======
 package lab3.word_uppg;
 
-
->>>>>>> fa0fa415fce6842f421a7261647d16a2c2642d18:src/lab3/word_uppg/IdentifyWordsMain.java
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -49,13 +42,13 @@ public class IdentifyWordsMain {
 	
 	public static void main(String[] args) throws IOException {
 		
-		File fil_in = new File("C:\\Users\\Metzzarn\\Documents\\Eclipse\\1DV007\\src\\lab3\\uppg4\\Champagne.txt");		// Fil att läsa från
-		File fil_out = new File("C:\\Users\\Metzzarn\\Documents\\Eclipse\\1DV007\\src\\lab3\\uppg4\\ord.txt");			// Fil att skriva till
+		File fil_in = new File("C:\\Users\\Metzzarn\\Documents\\Eclipse\\1DV007\\src\\lab3\\word_uppg\\Champagne.txt");		// Fil att läsa från
+		File fil_out = new File("C:\\Users\\Metzzarn\\Documents\\Eclipse\\1DV007\\src\\lab3\\word_uppg\\ord.txt");			// Fil att skriva till
 		FileWriter wr = new FileWriter(fil_out);																// Filskrivare för att skriva till filer
 		
 		String fil_in_String = fileToString(fil_in);
 		
-		Pattern p = Pattern.compile("[^-^0-9^.]");		// Pattern för att ta bort siffror och punkter samt "
+		Pattern p = Pattern.compile("[^-^0-9^.^,^-]");		// Pattern för att ta bort siffror och punkter samt "
 		
 		Matcher m = p.matcher(fil_in_String);
 		
