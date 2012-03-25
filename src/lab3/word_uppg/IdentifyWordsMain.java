@@ -1,6 +1,12 @@
+<<<<<<< HEAD:src/lab3/uppg4/IdentifyWordsMain.java
 package lab3.uppg4;
 
 import java.util.Scanner;
+=======
+package lab3.word_uppg;
+
+
+>>>>>>> fa0fa415fce6842f421a7261647d16a2c2642d18:src/lab3/word_uppg/IdentifyWordsMain.java
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;

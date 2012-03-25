@@ -17,7 +17,7 @@ public class LinkedQueue implements Queue {
 	private Node tail = null;
 	private Object tmp = null;
 	
-	// Tagen från föreläsningsmaterial
+	// Tagen frï¿½n fï¿½relï¿½sningsmaterial
 	private class Node { // private inner class
 		int value;
 		Node next = null;
@@ -26,12 +26,12 @@ public class LinkedQueue implements Queue {
 	}
 
 	/**
-	 * @return aktuella storleken på den givna kön
+	 * @return aktuella storleken pï¿½ den givna kï¿½n
 	 */
 	public int size() { return size; }
 
 	/**
-	 * @return Sant om kön är tom
+	 * @return Sant om kï¿½n ï¿½r tom
 	 */
 	public boolean isEmpty() {
 		if (size == 0)
@@ -41,7 +41,7 @@ public class LinkedQueue implements Queue {
 	}
 
 	/**
-	 * @param element att lägga till sist i kön
+	 * @param element att lï¿½gga till sist i kï¿½n
 	 */
 	public void enqueue(Object element) {
 		if (head == null) {
@@ -54,11 +54,11 @@ public class LinkedQueue implements Queue {
 			tail = tail.next;
 			
 		}
-		size++;			// Ökar köns storlek
+		size++;			// ï¿½kar kï¿½ns storlek
 	}
 
 	/**
-	 * Tar bort första elementet i kön
+	 * Tar bort fï¿½rsta elementet i kï¿½n
 	 * @return elementet som togs bort
 	 * @throws QueueException 
 	 */
@@ -70,31 +70,31 @@ public class LinkedQueue implements Queue {
 			head = head.next;
 			return tmp;
 		}
-		else throw new QueueException("Kön är tom");
+		else throw new QueueException("Kï¿½n ï¿½r tom");
 	}
 
 	/**
-	 * @return första elementet i kön
+	 * @return fï¿½rsta elementet i kï¿½n
 	 * @throws QueueException 
 	 */
 	public Object first() throws QueueException {
 		if (head != null || size > 0)
 			return head.value;
-		else throw new QueueException("Kön är tom och det finns inget värde att hämta");
+		else throw new QueueException("Kï¿½n ï¿½r tom och det finns inget vï¿½rde att hï¿½mta");
 	}
 
 	/**
-	 * @return sista elementet i kön
+	 * @return sista elementet i kï¿½n
 	 * @throws QueueException 
 	 */
 	public Object last() throws QueueException {
 		if (head != null || size > 0)
 			return tail.value;
-		else throw new QueueException("Kön är tom så det finns inget \"sista\" värde");
+		else throw new QueueException("Kï¿½n ï¿½r tom sï¿½ det finns inget \"sista\" vï¿½rde");
 	}
 
 	/**
-	 * Itererar över den givna kön
+	 * Itererar ï¿½ver den givna kï¿½n
 	 */
 	public Iterator iterator() {
 		return new QueueIterator();
@@ -102,10 +102,10 @@ public class LinkedQueue implements Queue {
 	
 	// Inception klass... yo daawgh!
 	class QueueIterator implements Iterator<Integer> {
-		private Node node = head; 		// node satt till head i kön
-		public Integer next() {			// metod för att få ut nästa element i kön
+		private Node node = head; 		// node satt till head i kï¿½n
+		public Integer next() {			// metod fï¿½r att fï¿½ ut nï¿½sta element i kï¿½n
 			int v = node.value;
-			node = node.next;			// Går ett steg fram så vi inte går runt igen
+			node = node.next;			// Gï¿½r ett steg fram sï¿½ vi inte gï¿½r runt igen
 			return v;
 		}
 		
