@@ -1,4 +1,4 @@
-package lab3.uppg4;
+package lab3.word_uppg;
 
 
 import java.io.File;

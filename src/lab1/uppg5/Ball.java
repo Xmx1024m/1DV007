@@ -42,8 +42,8 @@ public class Ball extends JPanel {
 	public int getspeedY () { return ballSpeedY; }
 	public int getRadius () { return RADIUS; }
 	
-	public void paintComponent (Graphics g) {
-		super.paintComponent(g);
+	public void paintComponents (Graphics g) {
+		super.paintComponents(g);
 		
 		g.setColor(Color.green);
 		g.fillOval( (ballX - RADIUS), (ballY - RADIUS), (2 * RADIUS), (2 * RADIUS));

@@ -82,7 +82,7 @@ public class BallPanel extends JPanel {
 			         b.setY((HEIGHT) - b.getRadius());
 	             }
 				
-				b.paintComponent(getGraphics());
+				b.paintComponents(getGraphics());
 				
 			}
 			
