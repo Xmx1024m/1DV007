@@ -14,7 +14,7 @@ public class WordCountMain {
 	public static FileReader fr;		// Filläsare som fileToString använder
 	public static String s = "";		// Vart vi sparar allt text från Filläsaren ovan
 	private static TreeSet<String> tree = new TreeSet<String>();
-	private static Set<String> lehash = new HashSet<String>();
+	private static Set lehash = new HashSet();
 	
 	/**
 	 * @param args
@@ -25,14 +25,16 @@ public class WordCountMain {
 		
 		StringTokenizer tokenizer = new StringTokenizer(fil_in_String);
 		while(tokenizer.hasMoreTokens()) {
+
+			System.out.println(tokenizer.countTokens());
 			Word word = new Word(tokenizer.nextToken());
 			tree.add(word.toString());
-			lehash.add(word.toString());
+			lehash.add(word);
 			
 		}
 		
 		System.out.println("TreeSet: " + "\n");
-		Iterator<String> iter = tree.iterator();
+		Iterator iter = tree.iterator();
 		
 	    while(iter.hasNext()) {
 	    	Object o1 = iter.next();
