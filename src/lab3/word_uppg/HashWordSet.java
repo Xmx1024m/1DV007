@@ -20,12 +20,6 @@ public class HashWordSet implements WordSet {
 	}
 
 	@Override
-	public Iterator<Word> iterator() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void add(Word word) {
 		int pos = (word.hashCode() % buckets.length);		// simpel hash-funktion från föreläsn-slides
 		Node node = buckets[pos];							// första noden i listan
@@ -78,4 +72,20 @@ public class HashWordSet implements WordSet {
 		}
 		return false;
 	}
+	
+	public String toString () {
+		StringBuffer sb = new StringBuffer();
+		
+		for (int i = 0; i < buckets.length; i++) {
+			sb.append(buckets[i].value.toString());
+		}
+		
+		return sb.toString();
+	}
+
+	@Override
+	public Iterator<Word> iterator() {
+		// TODO Auto-generated method stub
+		return null;
+	} 
 }
