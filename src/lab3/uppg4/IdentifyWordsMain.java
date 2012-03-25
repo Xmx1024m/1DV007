@@ -1,46 +1,15 @@
 package lab3.uppg4;
 
-<<<<<<< HEAD
 import java.util.Scanner;
-=======
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
->>>>>>> c4f08516adb5a2fee413389b261dec3702b13c12
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class IdentifyWordsMain {
-<<<<<<< HEAD
-
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		
-		// Pattern för att ta bort siffror och punkter samt "-"
-		Pattern p = Pattern.compile("[^-^0-9^.]");
-		
-		String input = "Vi drack 72 liter";
-		
-		Scanner sc = new Scanner(input);
-		Matcher m = p.matcher(input);
-		String s = "";
-		
-		for (int i = 0; i < input.length(); i++) {
-			if (m.find())
-				s += m.group();
-		}
-		
-		System.out.println(s);
-			
-	}
-
-}
-=======
 	
 	public static FileReader fr;		// Fillläsare som fileToString använder
 	public static String s = "";		// Vart vi sparar allt text från Filläsaren ovan
@@ -74,8 +43,8 @@ public class IdentifyWordsMain {
 	
 	public static void main(String[] args) throws IOException {
 		
-		File fil_in = new File("C:\\Users\\Mathias\\workspace\\1DV007\\src\\lab3\\uppg4\\Champagne.txt");		// Fil att läsa från
-		File fil_out = new File("C:\\Users\\Mathias\\workspace\\1DV007\\src\\lab3\\uppg4\\ord.txt");			// Fil att skriva till
+		File fil_in = new File("C:\\Users\\Metzzarn\\Documents\\Eclipse\\1DV007\\src\\lab3\\uppg4\\Champagne.txt");		// Fil att läsa från
+		File fil_out = new File("C:\\Users\\Metzzarn\\Documents\\Eclipse\\1DV007\\src\\lab3\\uppg4\\ord.txt");			// Fil att skriva till
 		FileWriter wr = new FileWriter(fil_out);																// Filskrivare för att skriva till filer
 		
 		String fil_in_String = fileToString(fil_in);
@@ -86,7 +55,7 @@ public class IdentifyWordsMain {
 		
 		/*
 		 * Så länge vår matcher hittar något ord som stämmer överens med vårt pattern ovan skriver den just den gruppen 
-		 * till får fil_out
+		 * till vår fil_out
 		 */
 		while (m.find()) {
 			wr.write(m.group());
@@ -94,4 +63,3 @@ public class IdentifyWordsMain {
 		wr.close();			// glöm inte att stänga filen när vi har skrivit klart
 	}
 }
->>>>>>> c4f08516adb5a2fee413389b261dec3702b13c12
