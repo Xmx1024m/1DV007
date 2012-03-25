@@ -1,7 +1,6 @@
 package Spel;
 
 import javax.swing.JFrame;
-import lab3.uppg4.*;
 
 public class PongGame {
 	
