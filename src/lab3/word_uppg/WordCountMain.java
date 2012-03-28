@@ -25,11 +25,9 @@ public class WordCountMain {
 		
 		StringTokenizer tokenizer = new StringTokenizer(fil_in_String);
 		while(tokenizer.hasMoreTokens()) {
-
-			System.out.println(tokenizer.countTokens());
 			Word word = new Word(tokenizer.nextToken());
 			tree.add(word.toString());
-			lehash.add(word);
+			lehash.add(word.toString());
 			
 		}
 		
@@ -43,7 +41,7 @@ public class WordCountMain {
 		
 		      
 
-		    System.out.println(lehash.size() + " distinct words detected : " + lehash );
+		    System.out.println(lehash.size() + " unika objekt: " + lehash );
 		
 	}
 
