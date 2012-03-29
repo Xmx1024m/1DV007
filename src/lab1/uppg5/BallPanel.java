@@ -50,8 +50,6 @@ public class BallPanel extends JPanel {
 		add(bollKnapp);
 		add(boll);
 		
-		
-		
 		timer.start();
 	}
 	
