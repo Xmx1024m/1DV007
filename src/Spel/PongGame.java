@@ -3,10 +3,7 @@ package Spel;
 import javax.swing.JFrame;
 
 public class PongGame {
-
-	/**
-	 * @param args
-	 */
+	
 	public static void main(String[] args) {
 		
 		JFrame frame = new JFrame("Pong-Game");
@@ -16,7 +13,9 @@ public class PongGame {
 		frame.pack();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
+		frame.setResizable(false);
 
+		
 	}
 
 }
