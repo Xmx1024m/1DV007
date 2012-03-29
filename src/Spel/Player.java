@@ -8,6 +8,8 @@ public class Player {
 	
 	private int x, y, width, height;
 	
+	// Lägger till en kommentar
+	
 	/*
 	 * Spelarna är egentligen "tomma objekt" som bara håller x,y, width och height värden
 	 * som senare används för att rita upp dem i PongPanel.java
