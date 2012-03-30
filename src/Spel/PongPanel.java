@@ -2,13 +2,11 @@ package Spel;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.Random;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -16,6 +14,10 @@ import javax.swing.Timer;
 
 public class PongPanel extends JPanel {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private final int WIDTH = 800, HEIGHT = 600;
 	private Player p1, p2;
 	
@@ -25,10 +27,13 @@ public class PongPanel extends JPanel {
 	private JLabel scoreP2 = new JLabel("0");
 	private JPanel scorePanel = new JPanel();
 	
+	//Nedräkning efter poäng
+//	private JPanel countdownPanel = new JPanel();
+//	private JLabel countdown = new JLabel("3");
+	
 	//Bollen
 	private Timer timer;
-	private Random rnd = new Random();
-	private int DELAY = 20;
+	private int DELAY = 10;
 	Ball boll = new Ball();
 	
 	public PongPanel () {
@@ -51,6 +56,7 @@ public class PongPanel extends JPanel {
 		timer = new Timer(DELAY, new BallListener());
 		timer.start();
 
+		//Plaserar och lägger till poängtavlan
 		scorePanel.setBounds(340, 1, 300, 22);
 		scorePanel.setBackground(Color.white);
 		scoreP1.setBounds(350, 2, 100, 20);
@@ -61,9 +67,16 @@ public class PongPanel extends JPanel {
 		scorePanel.add(scoreP1);
 		scorePanel.add(divider);
 		scorePanel.add(scoreP2);
+		
+		//Nedräkning efter poäng
+//		countdownPanel.setBackground(Color.white);
+//		countdownPanel.setBounds(400, 300, 70, 70);
+//		countdown.setBounds((WIDTH/2), (HEIGHT/2), 70, 70);
+//		add(countdownPanel);
+//		countdownPanel.add(countdown);
 	}
 	
-	public void paintComponent (Graphics g) {
+	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		
 		// I hedlig pong-anda så är spelarna vita
@@ -157,22 +170,33 @@ public class PongPanel extends JPanel {
 			boll.setY(boll.getY() + boll.getSpeedY());
 			
 			//Kontrollerar om bollen träffar ett spelarbräde
-//			if (p1Block()) {
-//				boll.setSpeedX(-boll.getSpeedX());
-//		        boll.setX(boll.getRadius());
-//			} else if (p2Block()) {
-//				boll.setSpeedX(-boll.getSpeedX());
-//				boll.setX(WIDTH - boll.getRadius());
-//			}
+			//Spelare 1
+			if((boll.getX() >= (10 + (WIDTH / 40))) && (boll.getX() <= (11 + (WIDTH / 40)))) {
+				System.out.print("\nP1");
+				if(p1Block() == true) {
+					System.out.println(" träffades");
+					boll.setSpeedX(-boll.getSpeedX());
+			        boll.setX(boll.getRadius());
+				}
+			}
+			//Spelare 2
+			if((boll.getX() >= (770 + (WIDTH / 40))) && (boll.getX() <= (770 + (WIDTH / 40)))) {
+				System.out.print("\nP2");
+				if(p2Block() == true) {
+					System.out.println(" träffades");
+					boll.setSpeedX(-boll.getSpeedX());
+					boll.setX(WIDTH - boll.getRadius());
+				}
+			}
 			
 			//Kontrollerar om bollen åkt bakom en spelare och ger isf poäng
-			if (boll.getX() - boll.getRadius() < 0) {
+			if (boll.getX() - boll.getRadius() == 0) {
 				setScoreP2();
 				boll.setStartP2();
 				repaint();
-		    } else if (boll.getX() + boll.getRadius() > WIDTH) {
+		    } else if (boll.getX() + boll.getRadius() == WIDTH) {
 		    	setScoreP1();
-		    	boll.setStartP1();
+	    		boll.setStartP1();
 				repaint();
 		    }
 			
@@ -190,16 +214,14 @@ public class PongPanel extends JPanel {
 	}
 	
 	public boolean p1Block () { //Kontrollerar om bollen träffat spelare 1's spelbräde och var på brädet.
-		if (boll.getX()>=p1.getX() && boll.getX()<=(p1.getX()+150)
-			&& boll.getY()>=p1.getY() && boll.getY()<=p1.getY()+122) {
+		if ((boll.getY()<=p1.getY()) && (boll.getY()>=p1.getY()+(HEIGHT/2))) {
 			return true;
 		}
 		return false;
 	}
 	
 	public boolean p2Block () { //Kontrollerar om bollen träffat spelare 2's spelbräde och var på brädet.
-		if (boll.getX()>=p1.getX() && boll.getX()<=(p1.getX()+150)
-			&& boll.getY()>=p1.getY() && boll.getY()<=p1.getY()+122) {
+		if ((boll.getY()<=p2.getY()) && (boll.getY()>=p2.getY()+(HEIGHT/2))) {
 			return true;
 		}
 		return false;

@@ -10,11 +10,11 @@ public class Ball {
 	
 	private final int RADIUS = 10; // Bollens radie
 	
-	private Random rnd = new Random();
 	private int ballX, ballY, ballSpeedX, ballSpeedY;
-	private final int ballStartSpeedP1, ballStartSpeedP2, ballStartX, ballStartY;
+	private final int ballStartX, ballStartY;
 	
 	public Ball() {
+		Random rnd = new Random();
 		
 		ballX = (800 / 2);
 		ballY = (600 / 2);
@@ -22,8 +22,6 @@ public class Ball {
 		ballSpeedX = (- rnd.nextInt(5) + 5);
 		ballSpeedY = (- rnd.nextInt(5) + 5);
 		
-		ballStartSpeedP1 = -5;
-		ballStartSpeedP2 = 5;
 		ballStartX = (800 / 2);
 		ballStartY = (600 / 2);
 	}
@@ -33,13 +31,15 @@ public class Ball {
 	public void setSpeedX (int n) { ballSpeedX = n; }
 	public void setSpeedY (int n) { ballSpeedY = n; }
 	public void setStartP1() {
-		ballSpeedX = -7;
+		ballSpeedX = -3;
+		ballSpeedY = 0;
 		ballX = ballStartX;
 		ballY = ballStartY;
 	}
 	
 	public void setStartP2() {
-		ballSpeedX = 7;
+		ballSpeedX = 3;
+		ballSpeedY = 0;
 		ballX = ballStartX;
 		ballY = ballStartY;
 	}
