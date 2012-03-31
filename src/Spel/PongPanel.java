@@ -1,23 +1,17 @@
+/*
+ * Authors: Simon Metsi & Mathias Andreasen
+ * PongPanel.java
+ */
 package Spel;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.util.Random;
-
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.Timer;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
 public class PongPanel extends JPanel {
-	
 	private final int WIDTH = 800, HEIGHT = 600;
 	private Player p1, p2;
+	int startDelay;
 	
 	//Hanterar poängen
 	private JLabel scoreP1 = new JLabel("0");
@@ -27,12 +21,11 @@ public class PongPanel extends JPanel {
 	
 	//Bollen
 	private Timer timer;
-	private Random rnd = new Random();
 	private int DELAY = 20;
 	Ball boll = new Ball();
 	
 	public PongPanel () {
-			
+		startDelay = 0;
 		// Knapplysnare för våra spelare
 		addKeyListener(new playerOneListener());		
 		addKeyListener(new playerTwoListener());			
@@ -150,27 +143,30 @@ public class PongPanel extends JPanel {
 	private class BallListener implements ActionListener {
 		
 		public void actionPerformed (ActionEvent event) {
+			if (startDelay < 50) {
+				startDelay++;
+				repaint();
+				return;
+			}
 			
-//			taz.caughtCreature(event.getPoint().getX(), event.getPoint().getY())
-//			(WIDTH / 2), (WIDTH / 40), (HEIGHT / 4)
-			boll.setX(boll.getX() + boll.getSpeedX());
-			boll.setY(boll.getY() + boll.getSpeedY());
-			
-			//Kontrollerar om bollen träffar ett spelarbräde
-//			if (p1Block()) {
-//				boll.setSpeedX(-boll.getSpeedX());
-//		        boll.setX(boll.getRadius());
-//			} else if (p2Block()) {
-//				boll.setSpeedX(-boll.getSpeedX());
-//				boll.setX(WIDTH - boll.getRadius());
-//			}
+			boll.move();
+
+			if (boll.checkCollision(p1)) {
+				boll.reflect();
+			}
+
+			if (boll.checkCollision(p2)) {
+				boll.reflect();
+			}
 			
 			//Kontrollerar om bollen åkt bakom en spelare och ger isf poäng
 			if (boll.getX() - boll.getRadius() < 0) {
 				setScoreP2();
+				startDelay = 0;
 				boll.setStartP2();
 				repaint();
 		    } else if (boll.getX() + boll.getRadius() > WIDTH) {
+		    	startDelay = 0;
 		    	setScoreP1();
 		    	boll.setStartP1();
 				repaint();
@@ -187,21 +183,5 @@ public class PongPanel extends JPanel {
 			
 			repaint();
 		}
-	}
-	
-	public boolean p1Block () { //Kontrollerar om bollen träffat spelare 1's spelbräde och var på brädet.
-		if (boll.getX()>=p1.getX() && boll.getX()<=(p1.getX()+150)
-			&& boll.getY()>=p1.getY() && boll.getY()<=p1.getY()+122) {
-			return true;
-		}
-		return false;
-	}
-	
-	public boolean p2Block () { //Kontrollerar om bollen träffat spelare 2's spelbräde och var på brädet.
-		if (boll.getX()>=p1.getX() && boll.getX()<=(p1.getX()+150)
-			&& boll.getY()>=p1.getY() && boll.getY()<=p1.getY()+122) {
-			return true;
-		}
-		return false;
 	}
 }
